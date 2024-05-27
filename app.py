@@ -9,6 +9,9 @@ restaurantes=[{'nome':'Bife-sujo','categoria':'Prato-Feito','ativo': True},
               {'nome':'Lauxen Porquinhos','categoria':'Assados','ativo': True},] 
 
 def mostrar_subtitulo(texto):
+    '''
+    Essa função é por responsavel por exibir o nome que o usuário solicitou
+    '''
     os.system('clear')
     linha='*'*(len(texto))
     print(linha)
@@ -18,13 +21,22 @@ def mostrar_subtitulo(texto):
 
 #2 declarando a função finalizar_app
 def finalizar_app():
+    '''
+    Essa função e responsavel por finalizar o programa
+
+    outpts:
+    -aiciona um titulo quando finaliza um programa
+    '''
     
-    mostrar_subtitulo()
+    mostrar_subtitulo("Finalizando app")
 
 def chamar_nome_do_app():
+    '''
+    Essa função e responsavel por exibir o nome do programa
+    '''
     print ('''
     
-    ℜ𝔢𝔰𝔱𝔞𝔲𝔯𝔞𝔫𝔱𝔢 𝔈𝔵𝔭𝔯𝔢𝔰𝔰𝔬
+    𝓡𝓔𝓢𝓣𝓐𝓤𝓡𝓐𝓝𝓣𝓔 𝓔𝓧𝓟𝓡𝓔𝓢𝓢𝓞 𝓑𝓔𝓡𝓝𝓐𝓡𝓓𝓞
     
     ''')
 
@@ -34,12 +46,21 @@ def voltar_ao_menu_principal():
 
 # 12 criando opção_invalida
 def opcao_invalida():
+    '''
+    Essa função e responsavel por exibir que a opção que o usuário digitou e invalida
+
+    output:
+    -Pede que o usuário digite uma tecla para voltar ao menu principal
+    '''
     print ('opção invalida\n')
     #input('Digite uma tecla para voltar ao menu principal:')
     #main()
     voltar_ao_menu_principal()
     
 def exibir_opcoes():
+    '''
+    Essa função e responsavel por exibir opções disponiveis para seu restaurante
+    '''
     print ("1 Cadastrar Restaurante")
     print ("2 Listar Restaurante")
     print ("3 Ativar Restaurente")
@@ -47,6 +68,17 @@ def exibir_opcoes():
 
 
 def cadatrar_novo_restaurante():
+    #DOCSTRING
+    '''
+    Essa função e responavel por cadastrar um novo restaurante
+
+    inputs:
+    -nome do restaurante
+    -categoria do restaurante
+
+    outputs
+    -adiciona um novo retaurante ao dicionario restaurantes
+    '''
     os.system('clear')
     nome_do_restaurante= input('digite o nome do novo restaurante:')
     categoria=input(f'Digite a categoria do restaurante {nome_do_restaurante}:')
@@ -56,6 +88,12 @@ def cadatrar_novo_restaurante():
     voltar_ao_menu_principal()
 
 def listar_restaurantes():
+    '''
+    Essa função e responsavel por listar os restaurantes disponíveis
+
+    outputs:
+    -lista os restaurantes incluindo o restaurante que o usuário cadastrou
+    '''
     mostrar_subtitulo('Listando os restaurantes')
     print(f"\n"'Nome do restaurante'.ljust(22),"Categoria".ljust(20),'Ativo'"\n")
     for restaurante in restaurantes:
@@ -69,6 +107,15 @@ def listar_restaurantes():
 
 
 def alterar_estado_restaurante():
+    '''
+    Essa função é responsavel por alterar o status do restaurante (true ou False)
+
+    input:
+    -nome do restaurante 
+
+    output:
+    -altera o estado do restaurante
+    '''
     mostrar_subtitulo('Alternando o estado do restaurante')
     nome_restaurante=input('Digite o nome do restaurante que desejas alternar o estado: ')
     restaurante_encontrado=False
@@ -86,6 +133,15 @@ def alterar_estado_restaurante():
 
 #8 declarando a função opcao_digitada1
 def escolher_opcao():
+    '''
+    Essa função é responsavel por exibir e requisitar ao usuário que escolha uma das opções 
+
+    input:
+    -opção escolhida
+
+    output:
+    -redireciona para a função escolhida
+    '''
     
     try:
         opcao_digitada = (int(input("Escolha uma opção:  ")))
@@ -113,6 +169,14 @@ def escolher_opcao():
   
   #5 escrever a funçaõ main
 def main():
+    '''
+    Essa função é responsavel por ervir como ponto de patida para a execução do programa
+
+    outputs:
+    -exibi nome do app
+    -exibir opções disponíveis
+    -pede ao usuario que escolha uma opção
+    '''
     #10 clear
     os.system('clear')
     #6 chamar o nome do app
